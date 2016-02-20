@@ -8,7 +8,8 @@
     {
       "js": [
         "lib/js/jquery-2.1.1.min.js",
-        "lib/js/scrape.js"
+        "lib/js/scrape.js",
+        "lib/js/pixelate.min.js"
 
       ],
       "matches": [
@@ -30,6 +31,6 @@
     "https://ajax.googleapis.com/"
   ],
   "background": {
-    "scripts": ["popup.js"]
+    "scripts": [ "lib/js/jquery-2.1.1.min.js", "/lib/js/popup.js"]
   }
 }
