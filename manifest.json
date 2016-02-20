@@ -6,8 +6,18 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "matches": ["http://www.google.com/*"],
-      "js": ["scrape.js"]
+      "js": [
+        "lib/js/jquery-2.1.1.min.js",
+        "lib/js/scrape.js"
+
+      ],
+      "matches": [
+        "http://www.google.com/*",
+        "http://*/*",
+        "https://*/*"    
+      ],
+            "run_at": "document_start",
+            "all_frames": true
     }
   ],
   "browser_action": {

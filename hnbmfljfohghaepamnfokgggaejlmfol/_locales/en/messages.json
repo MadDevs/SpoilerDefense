@@ -1,0 +1,42 @@
+﻿{
+    "appName": {
+        "message": "nCage",
+        "description": "The title of the application, displayed in the web store."
+    },
+    "appDesc": {
+        "message": "Replaces all images on all pages to Nicolas Cage.",
+        "description": "The description of the application, displayed in the web store."
+    },
+    "optionsHeader": {
+        "message": "nCage Options",
+        "description": "Title of Options page"
+    },
+    "optionsPageActivate": {
+        "message": "nCage is",
+        "description": "Text shown next to On/Off-button"
+    },
+    "optionsPageContextLink": {
+        "message": "Show \"nCage Inactivate\" on right-click",
+        "description": "Text shown next to On/Off-button"
+    },
+    "optionsPageContextLinkActivate": {
+        "message": "Show \"nCage Activate\" on right-click",
+        "description": "Text shown next to On/Off-button"
+    },
+       
+    "contextMenuInactivate": {
+        "message": "nCage Inactivate",
+        "description": "The option in context menu to inactivate the extension"
+    }, 
+    "contextMenuActivate": {
+        "message": "nCage Activate",
+        "description": "The option in context menu to activate the extension"
+    }, 
+    "openOptionsInfo": {
+        "message": "Open options again by using right-click or by clicking nCage 'Options' under ",
+        "description": "The option in context menu to activate the extension"
+    }
+    
+    
+}
+
