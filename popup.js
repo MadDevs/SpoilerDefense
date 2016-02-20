@@ -119,5 +119,5 @@
 
 
 chrome.tabs.executeScript({file: "scrape.js"}, function() {
-        console.log("content loaded");
-    });
+  console.log("content loaded");
+});
