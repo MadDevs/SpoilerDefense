@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "Spoiler Defender",
-  "description": "This extension shows a Google Image search result for the current page",
-  "version": "1.0",
+  "description": "This plugin will automatically block spoiler-like photos in your Facebook feed based on the look alike of the photos that you feed the algorithm. Click configuration to add new images to learn.",
+  "version": "1.1",
   "content_scripts": 
   [
   {
@@ -13,8 +13,11 @@
     "lib/js/pixelate.min.js",
     "lib/js/timer.js"
     ],
+
     "css":        [
-    "lib/styles/timer.css"
+
+      "lib/styles/timer.css"
+
     ],
     "matches": [
     "http://www.google.com/*",
@@ -26,10 +29,11 @@
   }
   ],
   "browser_action": {
-    "default_icon": "images/icon.png",
+    "default_icon": "images/LOGO.png",
     "default_popup": "index.html",
-    "default_title": "Click here!"
+    "default_title": "Spiler Free"
     },
+    "icons": { "128": "images/LOGO.png", "16": "images/LOGO.png" },
     "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"

@@ -2,8 +2,9 @@
 console.log("added");
 
 $( document ).on('ready', function() {
-   $("#submitLink").on("click", function(){
+   $("#submitLink").on("click", function(event){
 
+    event.preventDefault();    
     var str = $("#textAreaId").val()
     var partsOfStr = str.split(',');
     var str2 = str.replace(/\s/g, '');
@@ -18,28 +19,28 @@ $( document ).on('ready', function() {
                 //Do something
                 
             }
-                //alert(jsonObject);
-                console.log(jsonObject);
+                
+                
 
                 
-                // $.ajax({
-                //     type: "POST",
-                //     url: "http://104.236.19.222/learnWithImages.php",
-                //     //dataType: "json",
-                //     data: jsonObject,
-                //     //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                //     success: function(jsonData) {
-                //        console.log(jsonData);
+                $.ajax({
+                     type: "POST",
+                     url: "http://104.236.19.222/learnWithImages.php",
+                     //dataType: "json",
+                     data: jsonObject,
+                     //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                     success: function(jsonData) {
+                        console.log(jsonData);
 
 
-                //     },//"Good job!", "You clicked the button!", "success"
+                     },//"Good job!", "You clicked the button!", "success"
                     
                     
-                //     error: function(errorMsg){
-                //         console.log(errorMsg);
+                     error: function(errorMsg){
+                         console.log(errorMsg);
 
-                //     }
-                // });
+                     }
+                 });
                 
                 
             });
@@ -50,4 +51,4 @@ $( document ).on('ready', function() {
 
 $("#formaid").on("click", function(event) {
     event.preventDefault();    
-});F
+});
