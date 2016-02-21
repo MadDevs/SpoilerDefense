@@ -31,7 +31,8 @@ $( document ).on('ready', function() {
                      //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                      success: function(jsonData) {
                         console.log(jsonData);
-
+                        setTimeout(function() {$("#success").show();}, 100);
+                        setTimeout(function() {$("#success").hide();}, 5000); 
 
                      },//"Good job!", "You clicked the button!", "success"
                     
