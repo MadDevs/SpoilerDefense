@@ -7,8 +7,11 @@
 	include('Kairos.php');
 	include('helper.php');
 	
-	$app_id  = '6ce41aa5';
-	$api_key = '6886ce557b7651a70f89c84f46740244';
+	//$app_id  = '';
+	//$api_key = '';
+	
+	$app_id  = '';
+	$api_key = '';
 
 	$Kairos  = new Kairos($app_id, $api_key);
 
@@ -36,13 +39,15 @@
 // Recognize
     $responseL = Unirest\Request::post("https://lambda-face-recognition.p.mashape.com/recognize",
         array(
-            "X-Mashape-Key" => "SnEuiYSjzhmsh6FcQM4HD9zXP3ixp1iIACMjsnqpJHt6bhftiN",
+			 //"X-Mashape-Key" => "",
+			 "X-Mashape-Key" => "",
             //"Content-Type" => "application/x-www-form-urlencoded",
             //"Accept" => "application/json"
         ),
         array(
-            "album" => "hackmty",
-            "albumkey" => "b2c4c250346cd9e4b3bc97d39ad916e5fe57710bd00162f00ffbc84b0cdd2a0d",
+            "album" => "hackMTY",
+		   "albumkey" => "",
+		   //"albumkey" => "",
             "urls" => $URL
         )
     );
@@ -65,24 +70,28 @@
     $pConfidence = floatval($person['confidence']);
     $name = $person['prediction'];
     
-	
+	//echo var_dump($response);
 	///RESULTS parseFloat("10.33")
 	$status = ($response['images']['0']['transaction']['status']);
 	$confidence = floatval($response['images']['0']['transaction']['confidence']);
 	$subject = ($response['images']['0']['transaction']['subject']);
 	//echo $status." ".$confidence." ".$subject." :2: ".$pConfidence." ".$name;
 	
+	// answer
+	$grade = 0;
+	
 	if($pConfidence >= 0.7 || $confidence >= 0.8){
-		echo 1;
+		$grade = 1;
 	}
-	else if($pConfidence >= 0.5 || $confidence > 0.6){
-		echo 2;
+	else if($pConfidence >= 0.6 || $confidence > 0.6){
+		$grade = 2;
 	}else if ($subject == $name){
-		echo 2;
+		$grade = 2;
 	}else{
-		echo 3;
+		$grade = 3;
 	}
 	
-	
+	$answer = array('grade' => $grade, 'name' => $subject, 'name2' => $name, 'firstAPI' => $confidence, 'secondAPI' => $pConfidence, 'url' => $URL);
+	echo json_encode($answer);
 
 ?>

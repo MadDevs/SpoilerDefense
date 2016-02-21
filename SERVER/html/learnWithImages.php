@@ -5,8 +5,11 @@
 	include('Kairos.php');
 	include('helper.php');
 	
-	$app_id  = '6ce41aa5';
-	$api_key = '6886ce557b7651a70f89c84f46740244';
+	//$app_id  = '';
+	//$api_key = '';
+	
+	$app_id  = '';
+	$api_key = '';
 
 	$Kairos  = new Kairos($app_id, $api_key);
 
@@ -14,6 +17,8 @@
 	$nombre = $_POST['nombre'];
 	$responseArray = array();
 	$stuff = $_POST['urls'];
+	
+	
 	
 	foreach($stuff as $key){
 		foreach($key as $key2){
@@ -25,8 +30,8 @@
 			$image_path = $key2;
 			//$image_data = imageDataFromFilePath($image_path);
 			$responseKairos = $Kairos->enrollImageWithData($image_path, $gallery_id, $subject_id);
-			$results = format_json($responseKairos, true);
-			array_push($responseArray, $results);
+			//$results = format_json($responseKairos, true);
+			array_push($responseArray, $responseKairos);
 			
 			
 			
@@ -37,20 +42,25 @@
 	
 	$responseL = Unirest\Request::post("https://lambda-face-recognition.p.mashape.com/album_train",
         array(
-            "X-Mashape-Key" => "SnEuiYSjzhmsh6FcQM4HD9zXP3ixp1iIACMjsnqpJHt6bhftiN",
+        //   "X-Mashape-Key" => "",
+            "X-Mashape-Key" => "",
         ),
         array(
-            "album" => "hackmty",
-            "albumkey" => "b2c4c250346cd9e4b3bc97d39ad916e5fe57710bd00162f00ffbc84b0cdd2a0d",
+            "album" => "hackMTY",
+            //            "albumkey" => "",
+            "albumkey" => "",
             "entryid" => $entryID,
             "urls" => $longString
         )
     );
 
+//    $responseL = Unirest\Request::get("https://lambda-face-recognition.p.mashape.com/album_rebuild?album=hackmty&albumkey=",
 
-    $responseL = Unirest\Request::get("https://lambda-face-recognition.p.mashape.com/album_rebuild?album=hackmty&albumkey=b2c4c250346cd9e4b3bc97d39ad916e5fe57710bd00162f00ffbc84b0cdd2a0d",
+    $responseL = Unirest\Request::get("https://lambda-face-recognition.p.mashape.com/album_rebuild?album=hackMTY&albumkey=",
         array(
-            "X-Mashape-Key" => "SnEuiYSjzhmsh6FcQM4HD9zXP3ixp1iIACMjsnqpJHt6bhftiN",
+            "X-Mashape-Key" => "",
+            // "X-Mashape-Key" => "",
+
         )
     );
 

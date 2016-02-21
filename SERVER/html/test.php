@@ -25,8 +25,8 @@
 
 
 //* * * * sample api credentials (works for example)
-$app_id  = 'e2a8eaa7';
-$api_key = '4092e4a45070bca728644e9285f084b4';
+$app_id  = '';
+$api_key = '';
 
 //* * * * create a new instance and authenticate
 $Kairos  = new Kairos($app_id, $api_key);
