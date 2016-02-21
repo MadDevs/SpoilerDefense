@@ -1,61 +1,12 @@
 .spoiler{
     font-size: 200px;
 }
-.timer {
-  position: relative;
-  width: inherit;
-  height: inherit;
-  float: left;
-}
 
 .percent {
   position: absolute;
-  top: 1.05;
-  left: 0;
-  width: 3.33;
-  font-size: 0.3;
-  text-align: center;
-}
-
-.timer > .slice {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  clip: rect(0px, 10px, 10px, 5px);
-}
-
-.timer > .slice.gt50 {
-  clip: rect(auto, auto, auto, auto);
-}
-
-.timer > .slice > .pie {
-  border: 10% solid red;
-  position: absolute;
-  width: 80%;
-  /* 1 - (2 * border width) */
-  height: 80%;
-  /* 1 - (2 * border width) */
-  clip: rect(0em, 50%, 100%, 0em);
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-
-.timer > .slice > .pie.fill {
-  -moz-transform: rotate(180deg) !important;
-  -webkit-transform: rotate(180deg) !important;
-  -o-transform: rotate(180deg) !important;
-  transform: rotate(180deg) !important;
-}
-
-.timer.fill > .percent {
-  display: none;
-}
-
-.timer.fill > .slice > .pie {
-  border: transparent;
-  background-color: #c0c0c0;
-  width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 10em; 
+  color: red;
 }
