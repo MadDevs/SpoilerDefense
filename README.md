@@ -22,3 +22,4 @@ To use this extension, navigate to *chrome://extensions/* and click on *Options*
 * [Lambda Face Recognition API](https://lambdal.com/face-recognition-api)
 * [Kairos Face Recognition API](https://www.kairos.com/face-recognition-api)
 * [Chrome Extension API](https://developer.chrome.com/extensions/api_index)
+* [Digital Ocean ](https://www.digitalocean.com/)
