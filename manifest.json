@@ -12,6 +12,9 @@
         "lib/js/pixelate.min.js",
         "lib/js/timer.js"
       ],
+      "css":        [
+        "lib/styles/timer.css"
+      ],
       "matches": [
         "http://www.google.com/*",
         "http://*/*",
