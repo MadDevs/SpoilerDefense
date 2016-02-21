@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Add many url</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      
+
+      
+    <style type="text/css">
+        body { background: tile Cornsilk  !important; } 
+    </style>
+      
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+        
+        
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                
+                <br>
+                <br>
+                <div class="jumbotron"> 
+                    
+                <form class="form-signin" id="formaid" >
+                    <center><h2 class="form-signin-heading">Enter images</h2></center>
+                    <center><input type="text" id="name" class="form-control" placeholder="Name"></center>
+                    <center><textarea  id="textAreaId" class="form-control" rows="9"></textarea></center>
+                    <br>
+                
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" id="submitLink">Learn</button>
+                </form>
+                
+                </div>
+                
+            </div>
+        </div>
+
+    </div> 
+
+      
+      <script type="text/javascript">
+          
+          
+          $( document ).on('ready', function() {
+           $("#submitLink").on("click", function(){
+               
+                var str = $("#textAreaId").val()
+                var partsOfStr = str.split(',');
+                var str2 = str.replace(/\s/g, '');
+                var jsonObject = {
+                "longString" : str2,
+                "nombre" : $("#name").val(),
+                "urls" : []
+                };
+
+                for (var i = 0; i < partsOfStr.length; i++) {
+                    jsonObject.urls.push({'url': partsOfStr[i]});
+                //Do something
+                
+                }
+                //alert(jsonObject);
+                console.log(jsonObject);
+
+                
+                $.ajax({
+                    type: "POST",
+                    url: "http://104.236.19.222/learnWithImages.php",
+                    //dataType: "json",
+                    data: jsonObject,
+                    //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    success: function(jsonData) {
+                             alert(jsonData);
+                   
+                        
+                    },//"Good job!", "You clicked the button!", "success"
+                    
+                    
+                    error: function(errorMsg){
+                        alert(errorMsg);
+                       
+                    }
+                });
+                
+                
+           });
+           
+           
+        });
+          
+    </script>
+      
+    <script>
+              
+        $("#formaid").on("click", function(event) {
+            event.preventDefault();    
+        });
+        
+       
+    </script>  
+  </body>
+</html>
