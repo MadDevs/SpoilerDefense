@@ -4,12 +4,12 @@ SpoilerDefense is a Google Chrome Extension with the purpose of hiding spoilers 
 
 # How To Install
 
-To install this extension, simply download the source files into your computer, navigate to [chrome extensions](chrome://extensions/) and *enable developer mode*. Click on *Load Unpacked Extension* and locate the folder that you downloaded. 
+To install this extension, simply download the source files into your computer, navigate to *chrome://extensions/* and *enable developer mode*. Click on *Load Unpacked Extension* and locate the folder that you downloaded. 
 
 # How To Use
 
 
-To use this extension, navigate to  [chrome extensions](chrome://extensions/) and click on *Options*. Use a name to identify the category to upload and write the urls to the images that you want to use to teach the algorithm. Recomended 8 picuters per category. 
+To use this extension, navigate to *chrome://extensions/* and click on *Options*. Use a name to identify the category to upload and write the urls to the images that you want to use to teach the algorithm. Recomended 8 picuters per category. 
 
 
 
