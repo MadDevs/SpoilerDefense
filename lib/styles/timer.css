@@ -8,6 +8,14 @@
   float: left;
 }
 
+.percent {
+  position: absolute;
+  top: 1.05;
+  left: 0;
+  width: 3.33;
+  font-size: 0.3;
+  text-align: center;
+}
 
 .timer > .slice {
   position: absolute;
