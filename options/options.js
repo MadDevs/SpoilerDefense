@@ -25,7 +25,7 @@ $( document ).on('ready', function() {
                 
                 $.ajax({
                      type: "POST",
-                     url: "http://104.236.19.222/learnWithImages.php",
+                     url: "http://localhost/learnWithImages.php",
                      //dataType: "json",
                      data: jsonObject,
                      //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
