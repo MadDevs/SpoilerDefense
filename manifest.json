@@ -4,36 +4,44 @@
   "name": "Getting started example",
   "description": "This extension shows a Google Image search result for the current page",
   "version": "1.0",
-  "content_scripts": [
-    {
-      "js": [
-        "lib/js/jquery-2.1.1.min.js",
-        "lib/js/scrape.js",
-        "lib/js/pixelate.min.js",
-        "lib/js/timer.js"
-      ],
-      "css":        [
-        "lib/styles/timer.css"
-      ],
-      "matches": [
-        "http://www.google.com/*",
-        "http://*/*",
-        "https://*/*"    
-      ],
-            "run_at": "document_start",
-            "all_frames": true
-    }
+  "content_scripts": 
+  [
+  {
+    "js": [
+    "lib/js/jquery-2.1.1.min.js",
+    "lib/js/scrape.js",
+    "lib/js/pixelate.min.js",
+    "lib/js/timer.js"
+    ],
+    "css":        [
+    "lib/styles/timer.css"
+    ],
+    "matches": [
+    "http://www.google.com/*",
+    "http://*/*",
+    "https://*/*"    
+    ],
+    "run_at": "document_start",
+    "all_frames": true
+  }
   ],
   "browser_action": {
     "default_icon": "images/icon.png",
     "default_popup": "index.html",
     "default_title": "Click here!"
-  },
-  "permissions": [
+    },
+    "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
-  ],
-  "background": {
-    "scripts": [ "lib/js/jquery-2.1.1.min.js", "/lib/js/popup.js"]
-  }
-}
+    ],
+    "background": {
+      "scripts": [ 
+      "lib/js/jquery-2.1.1.min.js", "/lib/js/popup.js"
+      ]
+      },
+      "options_page": "options/options.html",
+      "options_ui": {
+        "page": "options/options.html",
+        "chrome_style": true
+      }
+    }
