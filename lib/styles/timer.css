@@ -1,12 +1,18 @@
+@font-face {
+    font-family: counterFont;
+    src: url('chrome-extension://__MSG_@@extension_id__/digital_counter_7.ttf');
+}
+
 .spoiler{
     font-size: 200px;
 }
 
 .percent {
+  font-family: counterFont;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   font-size: 10em; 
-  color: red;
+  color: #40FF00;
 }
